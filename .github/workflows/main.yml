@@ -39,7 +39,7 @@ jobs:
           CXX=/usr/bin/g++-9 cmake -DCOVERAGE=1 ..
           cmake --build .
           ./RunTest
-          lcov -t "banking" -o lcov.info -c -d .
+          lcov -t "banking" -o ./coverage/lcov.info -c -d .
           
       - name: CovBeg
         uses: coverallsapp/github-action@master
