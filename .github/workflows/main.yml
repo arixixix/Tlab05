@@ -30,13 +30,13 @@ jobs:
         run:  |
           git submodule update --init
           sudo apt install lcov
-          sudo apt install g++-7
+          sudo apt install g++-9
       
       - name: test
         shell: bash
         run: |
           mkdir _build && cd _build
-          CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
+          CXX=/usr/bin/g++-9 cmake -DCOVERAGE=1 ..
           cmake --build .
           ./RunTest
           lcov -t "banking" -o lcov.info -c -d .
